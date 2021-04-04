@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/imagePicker/static/js/app.15692899.chunk.js",
-    "app.js.map": "/imagePicker/static/js/app.15692899.chunk.js.map",
+    "app.js": "/imagePicker/static/js/app.e53fbc49.chunk.js",
+    "app.js.map": "/imagePicker/static/js/app.e53fbc49.chunk.js.map",
     "runtime~app.js": "/imagePicker/static/js/runtime~app.d953c1ba.js",
     "runtime~app.js.map": "/imagePicker/static/js/runtime~app.d953c1ba.js.map",
-    "static/js/2.01ae3ab1.chunk.js": "/imagePicker/static/js/2.01ae3ab1.chunk.js",
-    "static/js/2.01ae3ab1.chunk.js.map": "/imagePicker/static/js/2.01ae3ab1.chunk.js.map",
+    "static/js/2.62f5404b.chunk.js": "/imagePicker/static/js/2.62f5404b.chunk.js",
+    "static/js/2.62f5404b.chunk.js.map": "/imagePicker/static/js/2.62f5404b.chunk.js.map",
     "fonts/AntDesign.ttf": "/imagePicker/./fonts/AntDesign.ttf",
     "fonts/Entypo.ttf": "/imagePicker/./fonts/Entypo.ttf",
     "fonts/Feather.ttf": "/imagePicker/./fonts/Feather.ttf",
@@ -25,11 +25,15 @@
     "index.html": "/imagePicker/index.html",
     "manifest.json": "/imagePicker/manifest.json",
     "serve.json": "/imagePicker/serve.json",
-    "static/js/2.01ae3ab1.chunk.js.LICENSE.txt": "/imagePicker/static/js/2.01ae3ab1.chunk.js.LICENSE.txt"
+    "static/js/2.62f5404b.chunk.js.LICENSE.txt": "/imagePicker/static/js/2.62f5404b.chunk.js.LICENSE.txt",
+    "static/media/bell.png": "/imagePicker/static/media/bell.cf04af27.png",
+    "static/media/heart.png": "/imagePicker/static/media/heart.23b5c2c0.png",
+    "static/media/rocket.png": "/imagePicker/static/media/rocket.d2f3bf41.png",
+    "static/media/star.png": "/imagePicker/static/media/star.69c71386.png"
   },
   "entrypoints": [
     "static/js/runtime~app.d953c1ba.js",
-    "static/js/2.01ae3ab1.chunk.js",
-    "static/js/app.15692899.chunk.js"
+    "static/js/2.62f5404b.chunk.js",
+    "static/js/app.e53fbc49.chunk.js"
   ]
 }
