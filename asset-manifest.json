@@ -4,8 +4,8 @@
     "app.js.map": "/imagePicker/static/js/app.15692899.chunk.js.map",
     "runtime~app.js": "/imagePicker/static/js/runtime~app.d953c1ba.js",
     "runtime~app.js.map": "/imagePicker/static/js/runtime~app.d953c1ba.js.map",
-    "static/js/2.f5b272e9.chunk.js": "/imagePicker/static/js/2.f5b272e9.chunk.js",
-    "static/js/2.f5b272e9.chunk.js.map": "/imagePicker/static/js/2.f5b272e9.chunk.js.map",
+    "static/js/2.01ae3ab1.chunk.js": "/imagePicker/static/js/2.01ae3ab1.chunk.js",
+    "static/js/2.01ae3ab1.chunk.js.map": "/imagePicker/static/js/2.01ae3ab1.chunk.js.map",
     "fonts/AntDesign.ttf": "/imagePicker/./fonts/AntDesign.ttf",
     "fonts/Entypo.ttf": "/imagePicker/./fonts/Entypo.ttf",
     "fonts/Feather.ttf": "/imagePicker/./fonts/Feather.ttf",
@@ -25,11 +25,11 @@
     "index.html": "/imagePicker/index.html",
     "manifest.json": "/imagePicker/manifest.json",
     "serve.json": "/imagePicker/serve.json",
-    "static/js/2.f5b272e9.chunk.js.LICENSE.txt": "/imagePicker/static/js/2.f5b272e9.chunk.js.LICENSE.txt"
+    "static/js/2.01ae3ab1.chunk.js.LICENSE.txt": "/imagePicker/static/js/2.01ae3ab1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime~app.d953c1ba.js",
-    "static/js/2.f5b272e9.chunk.js",
+    "static/js/2.01ae3ab1.chunk.js",
     "static/js/app.15692899.chunk.js"
   ]
 }
