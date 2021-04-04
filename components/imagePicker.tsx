@@ -4,7 +4,7 @@ import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react
 import * as ImagePicker from 'expo-image-picker';
 import * as Sharing from 'expo-sharing';
 import uploadToAnonymousFilesAsync from 'anonymous-files';
-
+import ImageButtons from '../components/elements/ImageButtons'
 const imagePicker = () => {
   // render() {
 
@@ -54,6 +54,7 @@ const imagePicker = () => {
           <Text style={styles.instructions}>
           just press the button below!
         </Text> */}
+        <ImageButtons />
         <TouchableOpacity
           onPress={openImagePickerAsync}
           style={styles.button}>
@@ -75,6 +76,7 @@ const imagePicker = () => {
       <Text style={styles.instructions}>
         just press the button below!
           </Text>
+      <ImageButtons />
       <TouchableOpacity
         onPress={openImagePickerAsync}
         style={styles.button}>
