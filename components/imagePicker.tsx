@@ -58,10 +58,15 @@ const imagePicker = () => {
         <TouchableOpacity
           onPress={openImagePickerAsync}
           style={styles.button}>
-          <Text style={styles.buttonText}>Pick a photo</Text>
+          <Text style={styles.buttonText}>Take a photo</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={openImagePickerAsync}
+          style={styles.button}>
+          <Text style={styles.buttonText}>Pick an Image</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={openShareDialogAsync} style={styles.button}>
-          <Text style={styles.buttonText}>Share this photo</Text>
+          <Text style={styles.buttonText}>Share It</Text>
         </TouchableOpacity>
       </View>
     );
@@ -80,7 +85,12 @@ const imagePicker = () => {
       <TouchableOpacity
         onPress={openImagePickerAsync}
         style={styles.button}>
-        <Text style={styles.buttonText}>Pick a photo</Text>
+        <Text style={styles.buttonText}>Take a photo</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={openImagePickerAsync}
+        style={styles.button}>
+        <Text style={styles.buttonText}>Pick an Image</Text>
       </TouchableOpacity>
     </View>
   )
