@@ -98,6 +98,38 @@ const imagePicker = () => {
           >
             {/* <Text style={styles.buttonText}>Share It</Text> */}
           </Button>
+          <Button
+            // title="Share"
+            onPress={openShareDialogAsync}
+            style={styles.button}
+            raised
+            disabled
+            icon={
+              <Icon
+                name="share"
+                size={15}
+                color="white"
+              />
+            }
+          >
+            {/* <Text style={styles.buttonText}>Share It</Text> */}
+          </Button>
+          <Button
+            // title="Share"
+            onPress={openShareDialogAsync}
+            style={styles.button}
+            raised
+            disabled
+            icon={
+              <Icon
+                name="share"
+                size={15}
+                color="white"
+              />
+            }
+          >
+            {/* <Text style={styles.buttonText}>Share It</Text> */}
+          </Button>
         </View>
         {/* end of button group view */}
       </View>
@@ -108,7 +140,7 @@ const imagePicker = () => {
     <View style={styles.container}>
       <Image source={{ uri: "https://i.imgur.com/TkIrScD.png" }} style={styles.logo} />
       <Text style={styles.instructions}>
-        To share a photo from your phone with a friend,
+        To share a photo from your phone,
           </Text>
       <Text style={styles.instructions}>
         just press the button below!
@@ -163,6 +195,38 @@ const imagePicker = () => {
         >
           {/* <Text style={styles.buttonText}>Share It</Text> */}
         </Button>
+        <Button
+          // title="Share"
+          onPress={openShareDialogAsync}
+          style={styles.button}
+          raised
+          disabled
+          icon={
+            <Icon
+              name="share"
+              size={15}
+              color="white"
+            />
+          }
+        >
+          {/* <Text style={styles.buttonText}>Share It</Text> */}
+        </Button>
+        <Button
+          // title="Share"
+          onPress={openShareDialogAsync}
+          style={styles.button}
+          raised
+          disabled
+          icon={
+            <Icon
+              name="share"
+              size={15}
+              color="white"
+            />
+          }
+        >
+          {/* <Text style={styles.buttonText}>Share It</Text> */}
+        </Button>
       </View>
       {/* end of button group view */}
     </View>
@@ -184,7 +248,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: '#888',
     alignItems: 'center',
-    justifyContent: 'center',
+    width: 200,
+    justifyContent: 'space-between',
   },
   logo: {
     width: 305,
