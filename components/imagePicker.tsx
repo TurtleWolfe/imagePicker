@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, Platform, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Button, Card, Image, Text, } from 'react-native-elements';
 // import logo from '../assets/images/logo.png';
 import * as ImagePicker from 'expo-image-picker';
 import * as Sharing from 'expo-sharing';
 import uploadToAnonymousFilesAsync from 'anonymous-files';
-import ImageButtons from '../components/elements/ImageButtons'
+import Icon from 'react-native-vector-icons/FontAwesome';
+// import ImageButtons from '../components/elements/ImageButtons'
 const imagePicker = () => {
   // render() {
   const [selectedImage, setSelectedImage] = React.useState(null);
@@ -46,21 +48,58 @@ const imagePicker = () => {
         <Image
           source={{ uri: selectedImage.localUri }}
           style={styles.thumbnail}
+          PlaceholderContent={<ActivityIndicator />}
         />
-        <ImageButtons />
-        <TouchableOpacity
-          onPress={openImagePickerAsync}
-          style={styles.button}>
-          <Text style={styles.buttonText}>Take a photo</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={openImagePickerAsync}
-          style={styles.button}>
-          <Text style={styles.buttonText}>Pick an Image</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={openShareDialogAsync} style={styles.button}>
-          <Text style={styles.buttonText}>Share It</Text>
-        </TouchableOpacity>
+        {/* <ImageButtons /> */}
+        <View style={styles.buttonContainer}>
+          {/* start of button group view */}
+          <Button
+            // title="Camera"
+            onPress={openImagePickerAsync}
+            style={styles.button}
+            raised
+            icon={
+              <Icon
+                name="camera"
+                size={15}
+                color="white"
+              />
+            }
+          >
+            {/* <Text style={styles.buttonText}>Take a photo</Text> */}
+          </Button>
+          <Button
+            // title="Gallery"
+            onPress={openImagePickerAsync}
+            style={styles.button}
+            raised
+            icon={
+              <Icon
+                name="folder-open"
+                size={15}
+                color="white"
+              />
+            }
+          >
+            {/* <Text style={styles.buttonText}>Pick an Image</Text> */}
+          </Button>
+          <Button
+            // title="Share"
+            onPress={openShareDialogAsync}
+            style={styles.button}
+            raised
+            icon={
+              <Icon
+                name="share"
+                size={15}
+                color="white"
+              />
+            }
+          >
+            {/* <Text style={styles.buttonText}>Share It</Text> */}
+          </Button>
+        </View>
+        {/* end of button group view */}
       </View>
     );
   }
@@ -74,17 +113,58 @@ const imagePicker = () => {
       <Text style={styles.instructions}>
         just press the button below!
           </Text>
-      <ImageButtons />
-      <TouchableOpacity
-        onPress={openImagePickerAsync}
-        style={styles.button}>
-        <Text style={styles.buttonText}>Take a photo</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        onPress={openImagePickerAsync}
-        style={styles.button}>
-        <Text style={styles.buttonText}>Pick an Image</Text>
-      </TouchableOpacity>
+      {/* <ImageButtons /> */}
+      {/* <ImageButtons /> */}
+      <View style={styles.buttonContainer}>
+        {/* start of button group view */}
+        <Button
+          // title="Camera"
+          onPress={openImagePickerAsync}
+          style={styles.button}
+          raised
+          icon={
+            <Icon
+              name="camera"
+              size={15}
+              color="white"
+            />
+          }
+        >
+          {/* <Text style={styles.buttonText}>Take a photo</Text> */}
+        </Button>
+        <Button
+          // title="Gallery"
+          onPress={openImagePickerAsync}
+          style={styles.button}
+          raised
+          icon={
+            <Icon
+              name="folder-open"
+              size={15}
+              color="white"
+            />
+          }
+        >
+          {/* <Text style={styles.buttonText}>Pick an Image</Text> */}
+        </Button>
+        <Button
+          // title="Share"
+          onPress={openShareDialogAsync}
+          style={styles.button}
+          raised
+          disabled
+          icon={
+            <Icon
+              name="share"
+              size={15}
+              color="white"
+            />
+          }
+        >
+          {/* <Text style={styles.buttonText}>Share It</Text> */}
+        </Button>
+      </View>
+      {/* end of button group view */}
     </View>
   )
 }
@@ -95,6 +175,13 @@ export default imagePicker
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#888',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonContainer: {
+    // flex: 1,
+    flexDirection: "row",
     backgroundColor: '#888',
     alignItems: 'center',
     justifyContent: 'center',
@@ -111,10 +198,10 @@ const styles = StyleSheet.create({
     marginBottom: 7,
   },
   button: {
-    backgroundColor: "blue",
-    padding: 10,
-    borderRadius: 5,
-    marginBottom: 10
+    // backgroundColor: "blue",
+    // padding: 10,
+    // borderRadius: 5,
+    // marginBottom: 10
   },
   buttonText: {
     fontSize: 17,
