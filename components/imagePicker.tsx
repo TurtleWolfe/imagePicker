@@ -7,7 +7,6 @@ import uploadToAnonymousFilesAsync from 'anonymous-files';
 import ImageButtons from '../components/elements/ImageButtons'
 const imagePicker = () => {
   // render() {
-
   const [selectedImage, setSelectedImage] = React.useState(null);
 
   let openImagePickerAsync = async () => {
@@ -48,12 +47,6 @@ const imagePicker = () => {
           source={{ uri: selectedImage.localUri }}
           style={styles.thumbnail}
         />
-        {/* <Text style={styles.instructions}>
-          To share a photo from your phone with a friend,
-          </Text>
-          <Text style={styles.instructions}>
-          just press the button below!
-        </Text> */}
         <ImageButtons />
         <TouchableOpacity
           onPress={openImagePickerAsync}
