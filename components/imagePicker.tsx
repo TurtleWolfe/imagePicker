@@ -13,14 +13,14 @@ const imagePicker = () => {
 
   {/* Camera Function */ }
   let openCameraPickerAsync = async () => {
-    let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    let permissionResult = await ImagePicker.requestCameraPermissionsAsync();
 
     if (permissionResult.granted === false) {
       alert("Permission to access camera roll is required!");
       return;
     }
 
-    let pickerResult = await ImagePicker.launchImageLibraryAsync();
+    let pickerResult = await ImagePicker.launchCameraAsync();
     // console.log(pickerResult);
     if (pickerResult.cancelled === true) {
       return;
