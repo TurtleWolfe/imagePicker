@@ -1,16 +1,40 @@
 import React, { Component } from 'react'
 import { ActivityIndicator, Platform, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Button, Card, Image, Text, } from 'react-native-elements';
-// import logo from '../assets/images/logo.png';
 import * as ImagePicker from 'expo-image-picker';
 import * as Sharing from 'expo-sharing';
 import uploadToAnonymousFilesAsync from 'anonymous-files';
 import Icon from 'react-native-vector-icons/FontAwesome';
+// import logo from '../assets/images/logo.png';
 // import ImageButtons from '../components/elements/ImageButtons'
 const imagePicker = () => {
   // render() {
   const [selectedImage, setSelectedImage] = React.useState(null);
 
+  {/* Camera Function */ }
+  let openCameraPickerAsync = async () => {
+    let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+
+    if (permissionResult.granted === false) {
+      alert("Permission to access camera roll is required!");
+      return;
+    }
+
+    let pickerResult = await ImagePicker.launchImageLibraryAsync();
+    // console.log(pickerResult);
+    if (pickerResult.cancelled === true) {
+      return;
+    }
+
+    if (Platform.OS === 'web') {
+      let remoteUri = await uploadToAnonymousFilesAsync(pickerResult.uri);
+      setSelectedImage({ localUri: pickerResult.uri, remoteUri });
+    } else {
+      setSelectedImage({ localUri: pickerResult.uri, remoteUri: null });
+    }
+  };
+
+  {/* Gallery Function */ }
   let openImagePickerAsync = async () => {
     let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
 
@@ -33,16 +57,17 @@ const imagePicker = () => {
     }
   };
 
+  {/* Sharing Function */ }
   let openShareDialogAsync = async () => {
     if (!(await Sharing.isAvailableAsync())) {
       alert(`The image is available for sharing at: ${selectedImage.remoteUri}`);
       return;
     }
-
     await Sharing.shareAsync(selectedImage.localUri);
   };
 
   if (selectedImage !== null) {
+    {/* Starting View */ }
     return (
       <View style={styles.container}>
         <Image
@@ -50,12 +75,12 @@ const imagePicker = () => {
           style={styles.thumbnail}
           PlaceholderContent={<ActivityIndicator />}
         />
-        {/* <ImageButtons /> */}
+        {/* start of button group view */}
         <View style={styles.buttonContainer}>
-          {/* start of button group view */}
+          {/* <Camera /> */}
           <Button
             // title="Camera"
-            onPress={openImagePickerAsync}
+            onPress={openCameraPickerAsync}
             style={styles.button}
             raised
             icon={
@@ -68,6 +93,7 @@ const imagePicker = () => {
           >
             {/* <Text style={styles.buttonText}>Take a photo</Text> */}
           </Button>
+          {/* <Gallery /> */}
           <Button
             // title="Gallery"
             onPress={openImagePickerAsync}
@@ -83,11 +109,13 @@ const imagePicker = () => {
           >
             {/* <Text style={styles.buttonText}>Pick an Image</Text> */}
           </Button>
+          {/* <Sharing /> */}
           <Button
             // title="Share"
             onPress={openShareDialogAsync}
             style={styles.button}
             raised
+            // disabled
             icon={
               <Icon
                 name="share"
@@ -98,6 +126,7 @@ const imagePicker = () => {
           >
             {/* <Text style={styles.buttonText}>Share It</Text> */}
           </Button>
+          {/* <ImageButtons /> */}
           <Button
             // title="Share"
             onPress={openShareDialogAsync}
@@ -114,6 +143,7 @@ const imagePicker = () => {
           >
             {/* <Text style={styles.buttonText}>Share It</Text> */}
           </Button>
+          {/* <ImageButtons /> */}
           <Button
             // title="Share"
             onPress={openShareDialogAsync}
@@ -136,8 +166,9 @@ const imagePicker = () => {
     );
   }
 
+  {/* Primary View */ }
   return (
-    <View style={styles.container}>
+    <View style={styles.container} >
       <Image source={{ uri: "https://i.imgur.com/TkIrScD.png" }} style={styles.logo} />
       <Text style={styles.instructions}>
         To share a photo from your phone,
@@ -145,13 +176,12 @@ const imagePicker = () => {
       <Text style={styles.instructions}>
         just press the button below!
           </Text>
-      {/* <ImageButtons /> */}
-      {/* <ImageButtons /> */}
+      {/* start of button group view */}
       <View style={styles.buttonContainer}>
-        {/* start of button group view */}
+        {/* <Camera /> */}
         <Button
           // title="Camera"
-          onPress={openImagePickerAsync}
+          onPress={openCameraPickerAsync}
           style={styles.button}
           raised
           icon={
@@ -164,6 +194,7 @@ const imagePicker = () => {
         >
           {/* <Text style={styles.buttonText}>Take a photo</Text> */}
         </Button>
+        {/* <Gallery /> */}
         <Button
           // title="Gallery"
           onPress={openImagePickerAsync}
@@ -179,6 +210,7 @@ const imagePicker = () => {
         >
           {/* <Text style={styles.buttonText}>Pick an Image</Text> */}
         </Button>
+        {/* <Sharing /> */}
         <Button
           // title="Share"
           onPress={openShareDialogAsync}
@@ -195,6 +227,7 @@ const imagePicker = () => {
         >
           {/* <Text style={styles.buttonText}>Share It</Text> */}
         </Button>
+        {/* <ImageButtons /> */}
         <Button
           // title="Share"
           onPress={openShareDialogAsync}
@@ -211,6 +244,7 @@ const imagePicker = () => {
         >
           {/* <Text style={styles.buttonText}>Share It</Text> */}
         </Button>
+        {/* <ImageButtons /> */}
         <Button
           // title="Share"
           onPress={openShareDialogAsync}
@@ -229,11 +263,10 @@ const imagePicker = () => {
         </Button>
       </View>
       {/* end of button group view */}
-    </View>
+    </View >
   )
 }
 // }
-
 export default imagePicker
 
 const styles = StyleSheet.create({
