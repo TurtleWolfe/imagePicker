@@ -20,7 +20,12 @@ const imagePicker = () => {
       return;
     }
 
-    let pickerResult = await ImagePicker.launchCameraAsync();
+    let pickerResult = await ImagePicker.launchCameraAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
     // console.log(pickerResult);
     if (pickerResult.cancelled === true) {
       return;
@@ -86,8 +91,8 @@ const imagePicker = () => {
             icon={
               <Icon
                 name="camera"
-                size={15}
-                color="white"
+                size={13}
+                color="yellow"
               />
             }
           >
@@ -102,12 +107,29 @@ const imagePicker = () => {
             icon={
               <Icon
                 name="folder-open"
-                size={15}
-                color="white"
+                size={13}
+                color="yellow"
               />
             }
           >
             {/* <Text style={styles.buttonText}>Pick an Image</Text> */}
+          </Button>
+          {/* <LipStickButton /> */}
+          <Button
+            // title="LipStick"
+            onPress={openShareDialogAsync}
+            style={styles.button}
+            raised
+            // disabled
+            icon={
+              <Icon
+                name="camera"
+                size={15}
+                color="red"
+              />
+            }
+          >
+            {/* <Text style={styles.buttonText}>Share It</Text> */}
           </Button>
           {/* <Sharing /> */}
           <Button
@@ -120,13 +142,13 @@ const imagePicker = () => {
               <Icon
                 name="share"
                 size={15}
-                color="white"
+                color="orange"
               />
             }
           >
             {/* <Text style={styles.buttonText}>Share It</Text> */}
           </Button>
-          {/* <ImageButtons /> */}
+          {/* Button ? */}
           <Button
             // title="Share"
             onPress={openShareDialogAsync}
@@ -136,14 +158,14 @@ const imagePicker = () => {
             icon={
               <Icon
                 name="share"
-                size={15}
+                size={10}
                 color="white"
               />
             }
           >
             {/* <Text style={styles.buttonText}>Share It</Text> */}
           </Button>
-          {/* <ImageButtons /> */}
+          {/* Button ? */}
           <Button
             // title="Share"
             onPress={openShareDialogAsync}
@@ -153,7 +175,24 @@ const imagePicker = () => {
             icon={
               <Icon
                 name="share"
-                size={15}
+                size={10}
+                color="white"
+              />
+            }
+          >
+            {/* <Text style={styles.buttonText}>Share It</Text> */}
+          </Button>
+          {/* Button ? */}
+          <Button
+            // title="Share"
+            onPress={openShareDialogAsync}
+            style={styles.button}
+            raised
+            disabled
+            icon={
+              <Icon
+                name="share"
+                size={10}
                 color="white"
               />
             }
@@ -188,7 +227,7 @@ const imagePicker = () => {
             <Icon
               name="camera"
               size={15}
-              color="white"
+              color="orange"
             />
           }
         >
@@ -204,11 +243,28 @@ const imagePicker = () => {
             <Icon
               name="folder-open"
               size={15}
-              color="white"
+              color="orange"
             />
           }
         >
           {/* <Text style={styles.buttonText}>Pick an Image</Text> */}
+        </Button>
+        {/* <LipStickButton /> */}
+        <Button
+          // title="LipStick"
+          onPress={openShareDialogAsync}
+          style={styles.button}
+          raised
+          disabled
+          icon={
+            <Icon
+              name="camera"
+              size={10}
+              color="white"
+            />
+          }
+        >
+          {/* <Text style={styles.buttonText}>Share It</Text> */}
         </Button>
         {/* <Sharing /> */}
         <Button
@@ -220,14 +276,14 @@ const imagePicker = () => {
           icon={
             <Icon
               name="share"
-              size={15}
+              size={10}
               color="white"
             />
           }
         >
           {/* <Text style={styles.buttonText}>Share It</Text> */}
         </Button>
-        {/* <ImageButtons /> */}
+        {/* Button ? */}
         <Button
           // title="Share"
           onPress={openShareDialogAsync}
@@ -237,14 +293,14 @@ const imagePicker = () => {
           icon={
             <Icon
               name="share"
-              size={15}
+              size={10}
               color="white"
             />
           }
         >
           {/* <Text style={styles.buttonText}>Share It</Text> */}
         </Button>
-        {/* <ImageButtons /> */}
+        {/* Button ? */}
         <Button
           // title="Share"
           onPress={openShareDialogAsync}
@@ -254,7 +310,24 @@ const imagePicker = () => {
           icon={
             <Icon
               name="share"
-              size={15}
+              size={10}
+              color="white"
+            />
+          }
+        >
+          {/* <Text style={styles.buttonText}>Share It</Text> */}
+        </Button>
+        {/* Button ? */}
+        <Button
+          // title="Share"
+          onPress={openShareDialogAsync}
+          style={styles.button}
+          raised
+          disabled
+          icon={
+            <Icon
+              name="share"
+              size={10}
               color="white"
             />
           }
@@ -281,7 +354,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: '#888',
     alignItems: 'center',
-    width: 200,
+    width: 260,
     justifyContent: 'space-between',
   },
   logo: {
