@@ -5,6 +5,7 @@ import * as ImagePicker from 'expo-image-picker';
 import * as Sharing from 'expo-sharing';
 import uploadToAnonymousFilesAsync from 'anonymous-files';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { Feather, Ionicons, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 // import logo from '../assets/images/logo.png';
 // import ImageButtons from '../components/elements/ImageButtons'
 const imagePicker = () => {
@@ -72,7 +73,7 @@ const imagePicker = () => {
   };
 
   if (selectedImage !== null) {
-    {/* Starting View */ }
+    {/* Primary View */ }
     return (
       <View style={styles.container}>
         <Image
@@ -87,12 +88,13 @@ const imagePicker = () => {
             // title="Camera"
             onPress={openCameraPickerAsync}
             style={styles.button}
+            containerStyle={{ borderRadius: 20 }}
             raised
             icon={
               <Icon
                 name="camera"
                 size={13}
-                color="yellow"
+                color="lightblue"
               />
             }
           >
@@ -103,12 +105,13 @@ const imagePicker = () => {
             // title="Gallery"
             onPress={openImagePickerAsync}
             style={styles.button}
+            containerStyle={{ borderRadius: 20 }}
             raised
             icon={
               <Icon
                 name="folder-open"
                 size={13}
-                color="yellow"
+                color="lightblue"
               />
             }
           >
@@ -118,15 +121,19 @@ const imagePicker = () => {
           <Button
             // title="LipStick"
             onPress={openShareDialogAsync}
-            style={styles.button}
+            style={styles.lipButton}
+            buttonStyle={{
+              backgroundColor: "orange",
+            }}
+            containerStyle={{ borderRadius: 20 }}
+            containerStyle={{ borderRadius: 20 }}
             raised
             // disabled
             icon={
-              <Icon
-                name="camera"
+              <MaterialCommunityIcons
+                name="lipstick"
                 size={15}
-                color="red"
-              />
+                color="purple" />
             }
           >
             {/* <Text style={styles.buttonText}>Share It</Text> */}
@@ -136,6 +143,7 @@ const imagePicker = () => {
             // title="Share"
             onPress={openShareDialogAsync}
             style={styles.button}
+            containerStyle={{ borderRadius: 20 }}
             raised
             // disabled
             icon={
@@ -153,6 +161,7 @@ const imagePicker = () => {
             // title="Share"
             onPress={openShareDialogAsync}
             style={styles.button}
+            containerStyle={{ borderRadius: 20 }}
             raised
             disabled
             icon={
@@ -170,6 +179,7 @@ const imagePicker = () => {
             // title="Share"
             onPress={openShareDialogAsync}
             style={styles.button}
+            containerStyle={{ borderRadius: 20 }}
             raised
             disabled
             icon={
@@ -187,6 +197,7 @@ const imagePicker = () => {
             // title="Share"
             onPress={openShareDialogAsync}
             style={styles.button}
+            containerStyle={{ borderRadius: 20 }}
             raised
             disabled
             icon={
@@ -205,7 +216,7 @@ const imagePicker = () => {
     );
   }
 
-  {/* Primary View */ }
+  {/* Starting View */ }
   return (
     <View style={styles.container} >
       <Image source={{ uri: "https://i.imgur.com/TkIrScD.png" }} style={styles.logo} />
@@ -222,12 +233,16 @@ const imagePicker = () => {
           // title="Camera"
           onPress={openCameraPickerAsync}
           style={styles.button}
+          buttonStyle={{
+            backgroundColor: "orange",
+          }}
+          containerStyle={{ borderRadius: 20 }}
           raised
           icon={
             <Icon
               name="camera"
               size={15}
-              color="orange"
+              color="purple"
             />
           }
         >
@@ -238,6 +253,7 @@ const imagePicker = () => {
           // title="Gallery"
           onPress={openImagePickerAsync}
           style={styles.button}
+          containerStyle={{ borderRadius: 20 }}
           raised
           icon={
             <Icon
@@ -253,15 +269,15 @@ const imagePicker = () => {
         <Button
           // title="LipStick"
           onPress={openShareDialogAsync}
-          style={styles.button}
+          style={styles.lipButton}
+          containerStyle={{ borderRadius: 20 }}
           raised
           disabled
           icon={
-            <Icon
-              name="camera"
-              size={10}
-              color="white"
-            />
+            <MaterialCommunityIcons
+              name="lipstick"
+              size={15}
+              color="red" />
           }
         >
           {/* <Text style={styles.buttonText}>Share It</Text> */}
@@ -271,6 +287,7 @@ const imagePicker = () => {
           // title="Share"
           onPress={openShareDialogAsync}
           style={styles.button}
+          containerStyle={{ borderRadius: 20 }}
           raised
           disabled
           icon={
@@ -288,6 +305,7 @@ const imagePicker = () => {
           // title="Share"
           onPress={openShareDialogAsync}
           style={styles.button}
+          containerStyle={{ borderRadius: 20 }}
           raised
           disabled
           icon={
@@ -305,6 +323,7 @@ const imagePicker = () => {
           // title="Share"
           onPress={openShareDialogAsync}
           style={styles.button}
+          containerStyle={{ borderRadius: 20 }}
           raised
           disabled
           icon={
@@ -322,6 +341,7 @@ const imagePicker = () => {
           // title="Share"
           onPress={openShareDialogAsync}
           style={styles.button}
+          containerStyle={{ borderRadius: 20 }}
           raised
           disabled
           icon={
@@ -370,6 +390,12 @@ const styles = StyleSheet.create({
   },
   button: {
     // backgroundColor: "blue",
+    // padding: 10,
+    borderRadius: 5,
+    // marginBottom: 10
+  },
+  lipButton: {
+    backgroundColor: "orange",
     // padding: 10,
     // borderRadius: 5,
     // marginBottom: 10
