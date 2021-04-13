@@ -88,6 +88,7 @@ const imagePicker = () => {
             // title="Camera"
             onPress={openCameraPickerAsync}
             style={styles.button}
+            buttonStyle={{ borderRadius: 20 }}
             containerStyle={{ borderRadius: 20 }}
             raised
             icon={
@@ -105,6 +106,7 @@ const imagePicker = () => {
             // title="Gallery"
             onPress={openImagePickerAsync}
             style={styles.button}
+            buttonStyle={{ borderRadius: 20 }}
             containerStyle={{ borderRadius: 20 }}
             raised
             icon={
@@ -121,11 +123,10 @@ const imagePicker = () => {
           <Button
             // title="LipStick"
             onPress={openShareDialogAsync}
-            style={styles.lipButton}
             buttonStyle={{
               backgroundColor: "orange",
+              borderRadius: 20
             }}
-            containerStyle={{ borderRadius: 20 }}
             containerStyle={{ borderRadius: 20 }}
             raised
             // disabled
@@ -143,6 +144,7 @@ const imagePicker = () => {
             // title="Share"
             onPress={openShareDialogAsync}
             style={styles.button}
+            buttonStyle={{ borderRadius: 20 }}
             containerStyle={{ borderRadius: 20 }}
             raised
             // disabled
@@ -161,6 +163,7 @@ const imagePicker = () => {
             // title="Share"
             onPress={openShareDialogAsync}
             style={styles.button}
+            buttonStyle={{ borderRadius: 20 }}
             containerStyle={{ borderRadius: 20 }}
             raised
             disabled
@@ -179,6 +182,7 @@ const imagePicker = () => {
             // title="Share"
             onPress={openShareDialogAsync}
             style={styles.button}
+            buttonStyle={{ borderRadius: 20 }}
             containerStyle={{ borderRadius: 20 }}
             raised
             disabled
@@ -197,6 +201,7 @@ const imagePicker = () => {
             // title="Share"
             onPress={openShareDialogAsync}
             style={styles.button}
+            buttonStyle={{ borderRadius: 20 }}
             containerStyle={{ borderRadius: 20 }}
             raised
             disabled
@@ -235,6 +240,7 @@ const imagePicker = () => {
           style={styles.button}
           buttonStyle={{
             backgroundColor: "orange",
+            borderRadius: 20
           }}
           containerStyle={{ borderRadius: 20 }}
           raised
@@ -253,6 +259,7 @@ const imagePicker = () => {
           // title="Gallery"
           onPress={openImagePickerAsync}
           style={styles.button}
+          buttonStyle={{ borderRadius: 20 }}
           containerStyle={{ borderRadius: 20 }}
           raised
           icon={
@@ -270,6 +277,7 @@ const imagePicker = () => {
           // title="LipStick"
           onPress={openShareDialogAsync}
           style={styles.lipButton}
+          buttonStyle={{ borderRadius: 20 }}
           containerStyle={{ borderRadius: 20 }}
           raised
           disabled
@@ -287,6 +295,7 @@ const imagePicker = () => {
           // title="Share"
           onPress={openShareDialogAsync}
           style={styles.button}
+          buttonStyle={{ borderRadius: 20 }}
           containerStyle={{ borderRadius: 20 }}
           raised
           disabled
@@ -305,6 +314,7 @@ const imagePicker = () => {
           // title="Share"
           onPress={openShareDialogAsync}
           style={styles.button}
+          buttonStyle={{ borderRadius: 20 }}
           containerStyle={{ borderRadius: 20 }}
           raised
           disabled
@@ -323,6 +333,7 @@ const imagePicker = () => {
           // title="Share"
           onPress={openShareDialogAsync}
           style={styles.button}
+          buttonStyle={{ borderRadius: 20 }}
           containerStyle={{ borderRadius: 20 }}
           raised
           disabled
@@ -341,6 +352,7 @@ const imagePicker = () => {
           // title="Share"
           onPress={openShareDialogAsync}
           style={styles.button}
+          buttonStyle={{ borderRadius: 20 }}
           containerStyle={{ borderRadius: 20 }}
           raised
           disabled
@@ -392,12 +404,6 @@ const styles = StyleSheet.create({
     // backgroundColor: "blue",
     // padding: 10,
     borderRadius: 5,
-    // marginBottom: 10
-  },
-  lipButton: {
-    backgroundColor: "orange",
-    // padding: 10,
-    // borderRadius: 5,
     // marginBottom: 10
   },
   buttonText: {
